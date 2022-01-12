@@ -1,0 +1,27 @@
+.jumbotron {
+    width: 800px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.selecionado{
+    background-color: yellowgreen;
+}
+
+.negrito{
+    font-weight: bold;
+}
+
+hr {
+    border-color: #999;
+}

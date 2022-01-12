@@ -1,0 +1,34 @@
+<div class="jumbotron">
+
+    <h3>{{app}}</h3>
+
+    <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando ?" />
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Serial</th>
+            <th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+            <th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+            <th>Operadora</th>
+            <th>Data</th>
+        </tr>
+
+        <tr ng-class="{' selecionado negrito ' : contato.selecionado}"
+            ng-repeat="contato in contatos | filter: criterioDeBusca | orderBy:criterioDeOrdenacao: direcaoDaOrdenacao">
+            <td><input type="checkbox" ng-model="contato.selecionado"></td>
+            <td>{{contato.serial}}</td>
+            <td>{{contato.nome | name}}</td>
+            <td>{{contato.telefone}}</td>
+            <td>{{contato.operadoras.nome | lowercase}}</td>
+            <td>{{contato.data | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <a class="btn btn-primary btn-block" href="#!/novoContato">Novo Contato</a>
+
+    <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)"
+        ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
+</div>
